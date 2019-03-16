@@ -26,8 +26,10 @@ server:
 eureka:
   client:
     service-url:
-      defaultZone: http://discovery:8761/eureka/  
+      defaultZone: http://discovery:8761/eureka/
+    instance:
+      preferIpAddress: true
       
 ribbon:
   eureka:
-    enabled: false
+    enabled: true
