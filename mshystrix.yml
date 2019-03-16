@@ -7,7 +7,7 @@ spring:
     
 api:
    zuul:
-      url: http://localhost:8087    
+      url: http://apihost:8087    
       
 feign:
   hystrix:
@@ -16,4 +16,10 @@ feign:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://discovery:8761/eureka/
+    instance:
+      preferIpAddress: true
+      
+ribbon:
+  eureka:
+    enabled: true
