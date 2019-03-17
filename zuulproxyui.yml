@@ -74,6 +74,8 @@ ribbon:
     #enabled: false
     
 eureka:
+  instance:
+    hostname: plhost
   client:
     service-url:
       defaultZone: http://discovery:8761/eureka/    
