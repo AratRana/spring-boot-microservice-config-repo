@@ -15,10 +15,13 @@ feign:
     
 eureka:
   client:
+    register-with-eureka: true
+    fetch-registry: true
     service-url:
       defaultZone: http://discovery:8761/eureka/
     instance:
-      preferIpAddress: true
+      hostname: plhost
+      #preferIpAddress: true
       
 ribbon:
   eureka:
