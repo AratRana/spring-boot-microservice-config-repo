@@ -1,0 +1,25 @@
+server:
+  port: 8084
+  
+spring:
+  application:
+    name: enterprisehystrix
+    
+api:
+   zuul:
+      url: http://in1-1021997lt:8087    
+      
+feign:
+  hystrix:
+    enabled: true    
+    
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://in1-1021997lt:8761/eureka/
+      
+ribbon:
+  eureka:
+    enabled: true
