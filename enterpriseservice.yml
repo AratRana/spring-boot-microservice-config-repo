@@ -21,7 +21,7 @@ connection:
   jndiName: TEST_ConnectionPool      
     
 server:
-  port: 8093
+  port: 8094
   
 eureka:
   client:
