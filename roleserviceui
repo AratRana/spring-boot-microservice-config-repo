@@ -18,3 +18,10 @@ eureka:
     fetch-registry: true
     service-url:
       defaultZone: http://in1-1021997lt:8761/eureka/ 
+      
+zuul:
+  routes:
+    roleservice:
+      path: /allRoles/json/**
+      service-id: roleservice
+      strip-prefix: false      
