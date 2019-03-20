@@ -1,1 +1,14 @@
 
+server:
+  port: 4000
+  error:
+    whitelabel:
+      enabled: false
+      
+spring:
+  application:
+    name: roleservice
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp      
