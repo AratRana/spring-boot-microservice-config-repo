@@ -50,6 +50,11 @@ zuul:
       service-id: roleserviceui
       strip-prefix: false
       
+    roleserviceui:
+      path: /roleserviceui/**
+      service-id: roleserviceui
+      strip-prefix: false
+      
     roleservice:
       path: /allRoles/json/**
       service-id: roleservice
