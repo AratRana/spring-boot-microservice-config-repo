@@ -47,6 +47,11 @@ zuul:
       
     roleservicehystrix:
       path: /api/rolehystrix/**
+      service-id: roleserviceui
+      strip-prefix: false
+      
+    roleservice:
+      path: /allRoles/json/**
       service-id: roleservice
       strip-prefix: false
       
