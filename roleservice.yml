@@ -22,4 +22,4 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: http://discovery:8761/eureka/    
+      defaultZone: http://in1-1021997lt:8761/eureka/    
