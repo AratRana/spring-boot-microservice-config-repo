@@ -45,6 +45,11 @@ zuul:
       service-id: mshystrix
       strip-prefix: false
       
+    roleservicehystrix:
+      path: /api/rolehystrix/**
+      service-id: roleservice
+      strip-prefix: false
+      
     customerui:
       path: /customerui/**
       service-id: customerui
