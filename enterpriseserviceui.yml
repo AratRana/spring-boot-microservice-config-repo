@@ -16,7 +16,7 @@ spring:
 zuul:
   routes:
     enterpriseservice:
-      path: /security/enterprises/v1/**
+      path: /rest/api/security/enterprises/**
       service-id: enterpriseservice
       strip-prefix: false
     
