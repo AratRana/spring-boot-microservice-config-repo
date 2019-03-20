@@ -6,7 +6,7 @@ server:
 
 spring:
   application:
-    name: zuulproxyui
+    name: zuulproxygateway
   mvc:
     view:
       prefix: /WEB-INF/jsp/
