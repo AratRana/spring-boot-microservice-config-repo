@@ -1,0 +1,20 @@
+server:
+  port: 4000
+  error:
+    whitelabel:
+      enabled: false
+      
+spring:
+  application:
+    name: roleserviceui
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+      
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://in1-1021997lt:8761/eureka/ 
