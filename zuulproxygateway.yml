@@ -11,6 +11,7 @@ spring:
     view:
       prefix: /WEB-INF/jsp/
       suffix: .jsp
+      
 
 
 zuul:
@@ -71,12 +72,12 @@ zuul:
       strip-prefix: false           
       
     enterpriseservice:
-      path: /security/enterprises/v1/**
+      path: /rest/api/security/enterprises/**
       service-id: enterpriseservice
       strip-prefix: false  
       
     enterprisehystrix:
-      path: /api/enterprisehystrix/**
+      path: /api/enterprise/hystrix/**
       service-id: enterprisehystrix
       strip-prefix: false
       
@@ -86,11 +87,6 @@ zuul:
   - Access-Control-Allow-Credentials, Access-Control-Allow-Origin
   
  
-  #prefix: /jda/
-  #host:
-    #connect-timeout-millis: 60000
-    #socket-timeout-millis: 60000
-
 ribbon:
   eager-load:
     enabled: true
@@ -105,3 +101,5 @@ eureka:
   client:
     service-url:
       defaultZone: http://discovery:8761/eureka/    
+    fetch-registry: true
+    register-with-eureka: true
