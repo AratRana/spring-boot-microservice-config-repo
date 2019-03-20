@@ -65,10 +65,21 @@ zuul:
       service-id: customerui
       strip-prefix: false  
 
-    enterpriseUI:
-      path: /enterpriseui/**
-      service-id: enterprise
+    enterpriseserviceui:
+      path: /enterpriseserviceui/**
+      service-id: enterpriseserviceui
+      strip-prefix: false           
+      
+    enterpriseservice:
+      path: /security/enterprises/v1/**
+      service-id: enterpriseservice
       strip-prefix: false  
+      
+    enterprisehystrix:
+      path: /api/enterprisehystrix/**
+      service-id: enterprisehystrix
+      strip-prefix: false
+      
   ignored-services:
   - '*'
   ignored-headers:
