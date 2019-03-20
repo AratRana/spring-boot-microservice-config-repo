@@ -6,7 +6,7 @@ server:
 
 spring:
   application:
-    name: enterpriseserviceui
+    name: ENTERPRISESERVICEUI
   mvc:
     view:
       prefix: /WEB-INF/jsp/
