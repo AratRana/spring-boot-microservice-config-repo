@@ -1,5 +1,5 @@
 server:
-  port: 4000
+  port: 5000
   error:
     whitelabel:
       enabled: false
@@ -10,4 +10,16 @@ spring:
   mvc:
     view:
       prefix: /WEB-INF/jsp/
-      suffix: .jsp      
+      suffix: .jsp
+  datasource:
+    url: jdbc:oracle:thin:@//IN1-1021861LT:1521/O12CR201
+    username: WWFMGR2018
+    password: WWFMGR2018
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://discovery:8761/eureka/    
