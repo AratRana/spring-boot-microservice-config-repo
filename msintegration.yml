@@ -1,0 +1,30 @@
+server:
+  port: 8099
+  error:
+    whitelabel:
+      enabled: false
+
+spring:
+  application:
+    name: msintegration
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+    
+ribbon:
+  eager-load:
+    enabled: true
+  ReadTimeout: 60000
+  ConnectTimeout: 60000
+  eureka:
+    enabled: true
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://discovery:8761/eureka/
+    instance:
+      hostname: plhost
