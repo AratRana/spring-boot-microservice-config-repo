@@ -9,7 +9,7 @@ spring:
     name: enterpriseserviceui
   mvc:
     view:
-      prefix: /WEB-INF/view/
+      prefix: /WEB-INF/jsp/
       suffix: .jsp
 
 
