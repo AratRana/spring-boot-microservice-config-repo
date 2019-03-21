@@ -77,7 +77,7 @@ zuul:
       strip-prefix: false  
       
     enterprisehystrix:
-      path: /api/enterprise/hystrix/**
+      path: /api/hystrix/**
       service-id: enterprisehystrix
       strip-prefix: false
       
