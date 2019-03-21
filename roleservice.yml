@@ -12,7 +12,7 @@ spring:
       prefix: /WEB-INF/jsp/
       suffix: .jsp
   datasource:
-    url: jdbc:oracle:thin:@//IN1-1021861LT:1521/O12CR201
+    url: jdbc:oracle:thin:@//dbhost:1521/O12CR201
     username: WWFMGR2018
     password: WWFMGR2018
     driver-class-name: oracle.jdbc.driver.OracleDriver
@@ -22,4 +22,4 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: http://in1-1021997lt:8761/eureka/    
+      defaultZone: http://discovery:8761/eureka/    
