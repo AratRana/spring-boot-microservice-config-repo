@@ -7,7 +7,7 @@ spring:
     
 api:
    zuul:
-      url: http://in1-1021997lt:8087    
+      url: http://apihost:8087    
       
 feign:
   hystrix:
@@ -18,7 +18,7 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: http://in1-1021997lt:8761/eureka/
+      defaultZone: http://discovery:8761/eureka/
       
 ribbon:
   eureka:
