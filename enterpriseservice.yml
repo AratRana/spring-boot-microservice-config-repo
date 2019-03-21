@@ -4,9 +4,9 @@ spring:
   main:
     allow-bean-definition-overriding: true  
   datasource:
-    url: jdbc:oracle:thin:@//in1-1021997lt:1521/O12CR201
-    username: CSMMGRTIP
-    password: CSMMGRTIP
+    url: jdbc:oracle:thin:@//dbhost:1521/O12CR201
+    username: RNDUSER
+    password: RNDUSER
     driver-class-name: oracle.jdbc.driver.OracleDriver
     jndi-name: java:comp/env/TEST_ConnectionPool
     tomcat:
@@ -28,7 +28,7 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: http://in1-1021997lt:8761/eureka/    
+      defaultZone: http://discovery:8761/eureka/    
       
 ribbon:
   eureka:
