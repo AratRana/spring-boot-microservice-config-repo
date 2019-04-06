@@ -7,6 +7,11 @@ server:
 spring:
   application:
     name: msintegration
+  #boot:
+    #admin:
+      #client:
+        #url:
+        #- http://localhost:9098  
   mvc:
     view:
       prefix: /WEB-INF/jsp/
@@ -26,5 +31,7 @@ eureka:
     fetch-registry: true
     service-url:
       defaultZone: http://discovery:8761/eureka/
-    instance:
-      hostname: plhost
+  instance:
+    hostname: plhost
+    prefer-ip-address: true
+  healthcheck: true  

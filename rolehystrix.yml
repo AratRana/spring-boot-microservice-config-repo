@@ -1,0 +1,33 @@
+server:
+  port: 9091
+  
+spring:
+  application:
+    name: rolehystrix
+  #boot:
+    #admin:
+      #client:
+        #url:
+        #- http://localhost:9098  
+    
+api:
+   zuul:
+      url: http://apihost:8087    
+      
+feign:
+  hystrix:
+    enabled: true    
+    
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://discovery:8761/eureka/
+    instance:
+      hostname: plhost
+      #preferIpAddress: true
+      
+ribbon:
+  eureka:
+    enabled: true

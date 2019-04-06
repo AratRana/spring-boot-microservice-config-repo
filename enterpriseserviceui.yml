@@ -1,5 +1,5 @@
 server:
-  port: 8096
+  port: 9095
   error:
     whitelabel:
       enabled: false
@@ -14,6 +14,7 @@ spring:
 
 
 zuul:
+  retryable: true
   routes:
     enterpriseservice:
       path: /rest/api/security/enterprises/**
@@ -23,8 +24,12 @@ zuul:
 ribbon:
   eager-load:
     enabled: true
-  ReadTimeout: 60000
-  ConnectTimeout: 60000
+  #ReadTimeout: 3000
+  #ConnectTimeout: 3000
+  MaxAutoRetriesNextServer: 1
+  OkToRetryOnAllOperations: true
+  retryable: true
+  MaxAutoRetries: 0
   eureka:
     enabled: true
 
@@ -34,3 +39,12 @@ eureka:
     fetch-registry: true
     service-url:
       defaultZone: http://discovery:8761/eureka/
+  instance:
+    prefer-ip-address: true       
+hystrix:
+ command:
+  default:
+   execution:
+    isolation:
+     thread:
+      timeoutInMilliseconds: 30000

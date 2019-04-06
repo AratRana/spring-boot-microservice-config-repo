@@ -1,25 +1,32 @@
-server:
-  port: 5000
-  error:
-    whitelabel:
-      enabled: false
-      
 spring:
   application:
     name: roleservice
-  mvc:
-    view:
-      prefix: /WEB-INF/jsp/
-      suffix: .jsp
+  #boot:
+    #admin:
+      #client:
+        #url:
+        #- http://localhost:9098  
+  main:
+    allow-bean-definition-overriding: true  
   datasource:
     url: jdbc:oracle:thin:@//dbhost:1521/O12CR201
-    username: WWFMGR2018
-    password: WWFMGR2018
-    driver-class-name: oracle.jdbc.driver.OracleDriver
+    username: CSMMGRTIP
+    password: CSMMGRTIP
+    driver-class-name: oracle.jdbc.driver.OracleDriver    
     
+server:
+  port: 5000
+  
 eureka:
   client:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: http://discovery:8761/eureka/    
+      defaultZone: http://discovery:8761/eureka/
+    instance:
+      hostname: plhost
+      #preferIpAddress: true
+      
+ribbon:
+  eureka:
+    enabled: true

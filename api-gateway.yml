@@ -1,0 +1,104 @@
+server:
+  port: 8087
+  error:
+    whitelabel:
+      enabled: false
+
+spring:
+  application:
+    name: api-gateway
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+  #boot:
+    #admin:
+      #client:
+        #url:
+        #- http://localhost:9098    
+      
+
+
+zuul:
+  retryable: true  
+  routes:
+    platformframework:
+      path: /rest/api/platform/**
+      service-id: platformframework
+      strip-prefix: false
+
+    hystrixframework:
+      path: /api/hystrix/**
+      service-id: mshystrix
+      strip-prefix: false
+      
+    customerui:
+      path: /customerui/**
+      service-id: customerui
+      strip-prefix: false   
+      
+    roleservicehystrix:
+      path: /api/roles/hystrix/**
+      service-id: rolehystrix
+      strip-prefix: false
+      
+    roleserviceui:
+      path: /roleserviceui/**
+      service-id: roleserviceui
+      strip-prefix: false
+      
+    roleservice:
+      path: /rest/api/roles/**
+      service-id: roleservice
+      strip-prefix: false          
+
+    enterpriseserviceui:
+      path: /enterpriseserviceui/**
+      service-id: enterpriseserviceui
+      strip-prefix: false           
+      
+    enterpriseservice:
+      path: /rest/api/security/enterprises/**
+      service-id: enterpriseservice
+      strip-prefix: false  
+      
+    enterprisehystrix:
+      path: /api/enterprise/hystrix/**
+      service-id: enterprisehystrix
+      strip-prefix: false
+      
+  ignored-services:
+  - '*'
+  ignored-headers:
+  - Access-Control-Allow-Credentials, Access-Control-Allow-Origin
+  
+ 
+ribbon:
+  #eager-load:
+    #enabled: true
+  ReadTimeout: 3000
+  ConnectTimeout: 3000
+  retryable: true
+  MaxAutoRetries: 0
+  MaxAutoRetriesNextServer: 1
+  OkToRetryOnAllOperations: true
+  #eureka:
+    #enabled: false
+    
+eureka:
+  instance:
+    hostname: plhost
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://discovery:8761/eureka/    
+    fetch-registry: true
+    register-with-eureka: true
+    registry-fetch-interval-seconds: 5
+hystrix:
+ command:
+  default:
+   execution:
+    isolation:
+     thread:
+      timeoutInMilliseconds: 30000    

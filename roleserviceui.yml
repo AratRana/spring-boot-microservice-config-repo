@@ -1,12 +1,17 @@
 server:
-  port: 4000
+  port: 4001
   error:
     whitelabel:
       enabled: false
       
 spring:
   application:
-    name: roleserviceui
+    name: ROLESERVICEUI
+  #boot:
+    #admin:
+      #client:
+        #url:
+        #- http://localhost:9098  
   mvc:
     view:
       prefix: /WEB-INF/view/
@@ -17,11 +22,34 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: http://discovery:8761/eureka/ 
+      defaultZone: http://discovery:8761/eureka/
+  instance:
+    prefer-ip-address: true 
+  healthcheck: true    
       
 zuul:
+  retryable: true
   routes:
     roleservice:
       path: /allRoles/json/**
       service-id: roleservice
       strip-prefix: false      
+      
+ribbon:
+  eager-load:
+    enabled: true
+  #ReadTimeout: 3000
+  #ConnectTimeout: 3000
+  MaxAutoRetriesNextServer: 1
+  OkToRetryOnAllOperations: true
+  retryable: true
+  MaxAutoRetries: 0
+  #eureka:
+    #enabled: true      
+hystrix:
+ command:
+  default:
+   execution:
+    isolation:
+     thread:
+      timeoutInMilliseconds: 30000   

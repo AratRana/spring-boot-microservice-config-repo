@@ -1,12 +1,17 @@
 spring:
   application:
     name: enterpriseservice
+  #boot:
+    #admin:
+      #client:
+        #url:
+        #- http://localhost:9098  
   main:
     allow-bean-definition-overriding: true  
   datasource:
     url: jdbc:oracle:thin:@//dbhost:1521/O12CR201
-    username: RNDUSER
-    password: RNDUSER
+    username: CSMMGRTIP
+    password: CSMMGRTIP
     driver-class-name: oracle.jdbc.driver.OracleDriver
     jndi-name: java:comp/env/TEST_ConnectionPool
     tomcat:
@@ -28,8 +33,26 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: http://discovery:8761/eureka/    
+      defaultZone: http://discovery:8761/eureka/
+  instance:
+    prefer-ip-address: true    
       
 ribbon:
+  eager-load:
+    enabled: true
+  ReadTimeout: 3000
+  ConnectTimeout: 3000
+  MaxAutoRetriesNextServer: 1
+  OkToRetryOnAllOperations: true
+  retryable: true
+  MaxAutoRetries: 0
   eureka:
     enabled: true
+
+hystrix:
+  command:
+    default:
+        execution:
+            isolation:
+                thread:
+                    timeoutInMilliseconds: 6500
