@@ -40,7 +40,8 @@ eureka:
     service-url:
       defaultZone: http://discovery:8761/eureka/
   instance:
-    prefer-ip-address: true       
+    prefer-ip-address: true    
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
 hystrix:
  command:
   default:
