@@ -34,4 +34,5 @@ eureka:
   instance:
     hostname: plhost
     prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}} 
   healthcheck: true  
