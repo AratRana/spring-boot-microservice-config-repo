@@ -25,6 +25,7 @@ eureka:
       defaultZone: http://discovery:8761/eureka/
     instance:
       hostname: plhost
+      instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}} 
       #preferIpAddress: true
       
 ribbon:
